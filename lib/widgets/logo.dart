@@ -3,9 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:math' as math;
 
 class SpinningLogo extends StatefulWidget {
-  SpinningLogo({Key key, this.minutes = 3}) : super(key: key);
+  SpinningLogo({Key key, this.seconds = 3}) : super(key: key);
 
-  final int minutes;
+  final int seconds;
 
   @override
   _SpinningLogoState createState() => _SpinningLogoState();
@@ -19,7 +19,7 @@ class _SpinningLogoState extends State<SpinningLogo>
   void initState() {
     super.initState();
     _controller = AnimationController(
-        vsync: this, duration: Duration(seconds: widget.minutes));
+        vsync: this, duration: Duration(seconds: widget.seconds));
     _controller.repeat();
 
     _controller.addListener(() {

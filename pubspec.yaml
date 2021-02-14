@@ -1,4 +1,4 @@
-name: Nino
+name: nino
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -22,9 +22,11 @@ environment:
 
 dependencies:
   google_fonts: ^1.1.1
-  provider: ^3.0.0
-  multicast_dns: ^0.2.2
+  provider: ^4.3.3
   flutter_svg: ^0.19.1
+  chunked_stream: ^1.2.0 
+  flutter_sparkline: ^0.1.0
+  protobuf: ^1.1.0
   flutter:
     sdk: flutter
 
