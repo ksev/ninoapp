@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:math' as math;
 
 class SpinningLogo extends StatefulWidget {
-  SpinningLogo({Key key, this.seconds = 3}) : super(key: key);
+  SpinningLogo({Key? key, this.seconds = 3}) : super(key: key);
 
   final int seconds;
 
@@ -13,7 +13,7 @@ class SpinningLogo extends StatefulWidget {
 
 class _SpinningLogoState extends State<SpinningLogo>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {

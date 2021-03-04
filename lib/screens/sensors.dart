@@ -2,19 +2,19 @@ import 'dart:collection';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:nino/state.dart';
 import 'package:nino/widgets/button.dart';
 import 'package:nino/widgets/input.dart';
+import 'package:nino/widgets/sparkline.dart';
 import 'package:provider/provider.dart';
 
 class Sensors extends StatelessWidget {
-  Sensors({Key key}) : super(key: key);
+  Sensors({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final sens = context.select<NinoServer, UnmodifiableMapView<int, Sensor>>(
-        (server) => server.sensors);
+    final sens = context.select<NinoServer?, UnmodifiableMapView<int, Sensor>>(
+        (server) => server?.sensors ?? UnmodifiableMapView({}));
 
     final builtInValues = sens.values.where((s) => !s.isVirtual).toList();
     builtInValues.sort((o, t) => o.id.compareTo(t.id));
@@ -59,9 +59,8 @@ class Sensors extends StatelessWidget {
                     child: ActionButton(
                       text: '+',
                       onTap: () {
-                        final server = context.read<NinoServer>();
-
-                        server.addSensor();
+                        final server = context.read<NinoServer?>();
+                        server?.addSensor();
                       },
                     ),
                   ),
@@ -175,7 +174,7 @@ class _SensorItemState extends State<SensorItem> {
 }
 
 class SensorEditor extends StatefulWidget {
-  SensorEditor({Key key, this.onDone}) : super(key: key);
+  SensorEditor({Key? key, required this.onDone}) : super(key: key);
 
   final void Function() onDone;
 
@@ -184,10 +183,10 @@ class SensorEditor extends StatefulWidget {
 }
 
 class _SensorEditorState extends State<SensorEditor> {
-  TextEditingController _aliasEditingController;
-  TextEditingController _unitEditingController;
-  TextEditingController _rateEditingControler;
-  TextEditingController _sourceEditingController;
+  late TextEditingController _aliasEditingController;
+  late TextEditingController _unitEditingController;
+  late TextEditingController _rateEditingControler;
+  late TextEditingController _sourceEditingController;
 
   @override
   void didChangeDependencies() {
@@ -198,9 +197,6 @@ class _SensorEditorState extends State<SensorEditor> {
     _aliasEditingController = TextEditingController(text: sens.alias);
     _unitEditingController = TextEditingController(text: sens.unit);
     _rateEditingControler = TextEditingController(text: sens.rate.toString());
-
-    debugPrint(sens.source);
-
     _sourceEditingController = TextEditingController(text: sens.source);
   }
 
@@ -376,21 +372,8 @@ class SensorItemCollapsed extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 5.0),
                           child: sensor.hasError
-                              ? Text(sensor.error)
-                              : Sparkline(
-                                  lineWidth: 1.5,
-                                  lineColor: Colors.black26,
-                                  fillMode: FillMode.below,
-                                  fillGradient: LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      const Color(0xFFEBEBEB),
-                                      const Color(0xFFFFFFFF),
-                                    ],
-                                  ),
-                                  data: sensor.values.reversed.toList(),
-                                ),
+                              ? Text(sensor.error!)
+                              : Sparkline(sensor.values.reversed),
                         ),
                       ),
                     ],

@@ -3,11 +3,11 @@ import 'package:nino/state.dart';
 import 'package:provider/provider.dart';
 
 class Control extends StatelessWidget {
-  Control({Key key}) : super(key: key);
+  Control({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final pwm0 = context.select<NinoServer, double>((s) => s.pwm0);
-    final pwm1 = context.select<NinoServer, double>((s) => s.pwm1);
+    final pwm0 = context.select<NinoServer?, double>((s) => s?.pwm0 ?? 0);
+    final pwm1 = context.select<NinoServer?, double>((s) => s?.pwm1 ?? 0);
 
     return Center(
       child: Padding(
@@ -19,8 +19,8 @@ class Control extends StatelessWidget {
               pwm0,
               label: 'Channel 0',
               onChange: (v) {
-                final server = context.read<NinoServer>();
-                server.setPwm(0, v);
+                final server = context.read<NinoServer?>();
+                server?.setPwm(0, v);
               },
             ),
             Container(
@@ -31,8 +31,8 @@ class Control extends StatelessWidget {
               pwm1,
               label: 'Channel 1',
               onChange: (v) {
-                final server = context.read<NinoServer>();
-                server.setPwm(1, v);
+                final server = context.read<NinoServer?>();
+                server?.setPwm(1, v);
               },
             )
           ],
@@ -43,7 +43,7 @@ class Control extends StatelessWidget {
 }
 
 class Channel extends StatelessWidget {
-  Channel(this.value, {this.onChange, this.label});
+  Channel(this.value, {required this.onChange, required this.label});
 
   final double value;
   final void Function(double) onChange;

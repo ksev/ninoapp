@@ -53,15 +53,15 @@ class Tabbar extends StatefulWidget {
 }
 
 class _TabbarState extends State<Tabbar> with SingleTickerProviderStateMixin {
-  Animation<double> tabAnimation;
-  Animation<double> iconAnimation;
-  Animation<double> fontAnimation;
-  Animation<Color> colorAnimation;
-  Animation<double> padAnimation;
-  AnimationController controller;
+  late Animation<double> tabAnimation;
+  late Animation<double> iconAnimation;
+  late Animation<double> fontAnimation;
+  late Animation<Color?> colorAnimation;
+  late Animation<double> padAnimation;
+  late AnimationController controller;
 
-  double midPoint;
-  String currentTab;
+  late double midPoint;
+  late String currentTab;
 
   @override
   void initState() {
@@ -99,9 +99,9 @@ class _TabbarState extends State<Tabbar> with SingleTickerProviderStateMixin {
     midPoint = 0.0;
     currentTab = "sensors";
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
       final rb =
-          widget.sensorsKey.currentContext.findRenderObject() as RenderBox;
+          widget.sensorsKey.currentContext!.findRenderObject() as RenderBox;
 
       final size = rb.size;
       final box = rb.localToGlobal(Offset.zero);
@@ -128,7 +128,7 @@ class _TabbarState extends State<Tabbar> with SingleTickerProviderStateMixin {
   }
 
   _moveTabToKey(GlobalKey key, String tabName) {
-    final rb = key.currentContext.findRenderObject() as RenderBox;
+    final rb = key.currentContext!.findRenderObject() as RenderBox;
 
     final size = rb.size;
     final box = rb.localToGlobal(Offset.zero);
@@ -149,7 +149,7 @@ class _TabbarState extends State<Tabbar> with SingleTickerProviderStateMixin {
     final size = media.size;
     final offset = midPoint == 0.0 ? size.width / 2.0 : midPoint;
 
-    Widget page;
+    Widget? page;
     switch (currentTab) {
       case "sensors":
         page = Sensors(key: ValueKey("sensors"));

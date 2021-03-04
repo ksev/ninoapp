@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final current = context.select<NinoServers, NinoServer>((s) => s.current);
+    final current = context.select<NinoServers, NinoServer?>((s) => s.current);
 
     return MaterialApp(
       title: 'Nino',
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.grey,
         textTheme: GoogleFonts.abelTextTheme(),
         accentColor: Colors.grey[400],
         // This makes the visual density adapt to the platform that you run
@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
 class Start extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final server = context.watch<NinoServer>();
+    final server = context.watch<NinoServer?>();
 
     if (server != null && server.state == ServerState.connected) {
       return Tabbar();

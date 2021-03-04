@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 
 class ActionButton extends StatefulWidget {
   ActionButton(
-      {this.text,
+      {required this.text,
       this.onTap,
       this.padding = const EdgeInsets.all(15.0),
       this.textStyle,
       this.color = Colors.black});
 
   final String text;
-  final void Function() onTap;
+  final void Function()? onTap;
   final EdgeInsets padding;
   final Color color;
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
 
   @override
   _ActionButtonState createState() => _ActionButtonState();

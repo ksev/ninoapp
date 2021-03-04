@@ -13,10 +13,10 @@ class Input extends StatelessWidget {
 
   final bool readonly;
   final String label;
-  final TextEditingController controller;
-  final TextStyle textStyle;
+  final TextEditingController? controller;
+  final TextStyle? textStyle;
   final EdgeInsets contentPadding;
-  final TextInputType keyboardType;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -91,10 +91,10 @@ class InputInverse extends StatelessWidget {
 
   final bool readonly;
   final String label;
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final TextStyle textStyle;
   final EdgeInsets contentPadding;
-  final TextInputType keyboardType;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -164,10 +164,10 @@ class InputAreaInverse extends StatelessWidget {
 
   final bool readonly;
   final String label;
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final TextStyle textStyle;
   final EdgeInsets contentPadding;
-  final TextInputType keyboardType;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {

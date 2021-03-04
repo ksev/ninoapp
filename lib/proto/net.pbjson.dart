@@ -2,9 +2,13 @@
 //  Generated code. Do not modify.
 //  source: net.proto
 //
-// @dart = 2.7
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields,deprecated_member_use_from_same_package
 
+import 'dart:core' as $core;
+import 'dart:convert' as $convert;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use helloDescriptor instead')
 const Hello$json = const {
   '1': 'Hello',
   '2': const [
@@ -16,6 +20,9 @@ const Hello$json = const {
   ],
 };
 
+/// Descriptor for `Hello`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List helloDescriptor = $convert.base64Decode('CgVIZWxsbxIYCgd2ZXJzaW9uGAEgASgJUgd2ZXJzaW9uEhIKBG5hbWUYAiABKAlSBG5hbWUSHAoJcmV0ZW50aW9uGAMgASgHUglyZXRlbnRpb24SEgoEcHdtMBgEIAEoAlIEcHdtMBISCgRwd20xGAUgASgCUgRwd20x');
+@$core.Deprecated('Use sensorsDescriptor instead')
 const Sensors$json = const {
   '1': 'Sensors',
   '2': const [
@@ -24,6 +31,7 @@ const Sensors$json = const {
   '3': const [Sensors_Sensor$json],
 };
 
+@$core.Deprecated('Use sensorsDescriptor instead')
 const Sensors_Sensor$json = const {
   '1': 'Sensor',
   '2': const [
@@ -41,6 +49,9 @@ const Sensors_Sensor$json = const {
   ],
 };
 
+/// Descriptor for `Sensors`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sensorsDescriptor = $convert.base64Decode('CgdTZW5zb3JzEjIKB3NlbnNvcnMYASADKAsyGC5uaW5vLm5ldC5TZW5zb3JzLlNlbnNvclIHc2Vuc29ycxrFAQoGU2Vuc29yEg4KAmlkGAEgASgHUgJpZBIUCgVhbGlhcxgCIAEoCVIFYWxpYXMSEgoEdW5pdBgDIAEoCVIEdW5pdBISCgRyYXRlGAYgASgHUgRyYXRlEhYKBnZhbHVlcxgHIAMoAVIGdmFsdWVzEhgKBnNvdXJjZRgIIAEoCUgAUgZzb3VyY2USFgoFZXJyb3IYCSABKAlIAVIFZXJyb3JCEQoPb3B0aW9uYWxfc291cmNlQhAKDm9wdGlvbmFsX2Vycm9y');
+@$core.Deprecated('Use sensorConfigDescriptor instead')
 const SensorConfig$json = const {
   '1': 'SensorConfig',
   '2': const [
@@ -56,6 +67,9 @@ const SensorConfig$json = const {
   ],
 };
 
+/// Descriptor for `SensorConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sensorConfigDescriptor = $convert.base64Decode('CgxTZW5zb3JDb25maWcSDgoCaWQYASABKAdSAmlkEhQKBWFsaWFzGAIgASgJUgVhbGlhcxISCgR1bml0GAMgASgJUgR1bml0EhQKBHJhdGUYBiABKAdIAFIEcmF0ZRIYCgZzb3VyY2UYByABKAlIAVIGc291cmNlQg8KDW9wdGlvbmFsX3JhdGVCEQoPb3B0aW9uYWxfc291cmNl');
+@$core.Deprecated('Use valueDescriptor instead')
 const Value$json = const {
   '1': 'Value',
   '2': const [
@@ -64,6 +78,9 @@ const Value$json = const {
   ],
 };
 
+/// Descriptor for `Value`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List valueDescriptor = $convert.base64Decode('CgVWYWx1ZRIOCgJpZBgBIAEoB1ICaWQSFAoFdmFsdWUYAiABKAFSBXZhbHVl');
+@$core.Deprecated('Use setPwmDescriptor instead')
 const SetPwm$json = const {
   '1': 'SetPwm',
   '2': const [
@@ -73,6 +90,7 @@ const SetPwm$json = const {
   '4': const [SetPwm_Channel$json],
 };
 
+@$core.Deprecated('Use setPwmDescriptor instead')
 const SetPwm_Channel$json = const {
   '1': 'Channel',
   '2': const [
@@ -81,3 +99,5 @@ const SetPwm_Channel$json = const {
   ],
 };
 
+/// Descriptor for `SetPwm`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setPwmDescriptor = $convert.base64Decode('CgZTZXRQd20SMgoHY2hhbm5lbBgBIAEoDjIYLm5pbm8ubmV0LlNldFB3bS5DaGFubmVsUgdjaGFubmVsEhQKBXZhbHVlGAIgASgCUgV2YWx1ZSIdCgdDaGFubmVsEggKBFB3bTAQABIICgRQd20xEAE=');

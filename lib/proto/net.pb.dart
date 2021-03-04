@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: net.proto
 //
-// @dart = 2.7
+// @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
@@ -25,11 +25,11 @@ class Hello extends $pb.GeneratedMessage {
 
   Hello._() : super();
   factory Hello({
-    $core.String version,
-    $core.String name,
-    $core.int retention,
-    $core.double pwm0,
-    $core.double pwm1,
+    $core.String? version,
+    $core.String? name,
+    $core.int? retention,
+    $core.double? pwm0,
+    $core.double? pwm1,
   }) {
     final _result = create();
     if (version != null) {
@@ -60,7 +60,7 @@ class Hello extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Hello copyWith(void Function(Hello) updates) => super.copyWith((message) => updates(message as Hello)); // ignore: deprecated_member_use
+  Hello copyWith(void Function(Hello) updates) => super.copyWith((message) => updates(message as Hello)) as Hello; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Hello create() => Hello._();
@@ -68,7 +68,7 @@ class Hello extends $pb.GeneratedMessage {
   static $pb.PbList<Hello> createRepeated() => $pb.PbList<Hello>();
   @$core.pragma('dart2js:noInline')
   static Hello getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Hello>(create);
-  static Hello _defaultInstance;
+  static Hello? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get version => $_getSZ(0);
@@ -150,13 +150,13 @@ class Sensors_Sensor extends $pb.GeneratedMessage {
 
   Sensors_Sensor._() : super();
   factory Sensors_Sensor({
-    $core.int id,
-    $core.String alias,
-    $core.String unit,
-    $core.int rate,
-    $core.Iterable<$core.double> values,
-    $core.String source,
-    $core.String error,
+    $core.int? id,
+    $core.String? alias,
+    $core.String? unit,
+    $core.int? rate,
+    $core.Iterable<$core.double>? values,
+    $core.String? source,
+    $core.String? error,
   }) {
     final _result = create();
     if (id != null) {
@@ -193,7 +193,7 @@ class Sensors_Sensor extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Sensors_Sensor copyWith(void Function(Sensors_Sensor) updates) => super.copyWith((message) => updates(message as Sensors_Sensor)); // ignore: deprecated_member_use
+  Sensors_Sensor copyWith(void Function(Sensors_Sensor) updates) => super.copyWith((message) => updates(message as Sensors_Sensor)) as Sensors_Sensor; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Sensors_Sensor create() => Sensors_Sensor._();
@@ -201,12 +201,12 @@ class Sensors_Sensor extends $pb.GeneratedMessage {
   static $pb.PbList<Sensors_Sensor> createRepeated() => $pb.PbList<Sensors_Sensor>();
   @$core.pragma('dart2js:noInline')
   static Sensors_Sensor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Sensors_Sensor>(create);
-  static Sensors_Sensor _defaultInstance;
+  static Sensors_Sensor? _defaultInstance;
 
-  Sensors_Sensor_OptionalSource whichOptionalSource() => _Sensors_Sensor_OptionalSourceByTag[$_whichOneof(0)];
+  Sensors_Sensor_OptionalSource whichOptionalSource() => _Sensors_Sensor_OptionalSourceByTag[$_whichOneof(0)]!;
   void clearOptionalSource() => clearField($_whichOneof(0));
 
-  Sensors_Sensor_OptionalError whichOptionalError() => _Sensors_Sensor_OptionalErrorByTag[$_whichOneof(1)];
+  Sensors_Sensor_OptionalError whichOptionalError() => _Sensors_Sensor_OptionalErrorByTag[$_whichOneof(1)]!;
   void clearOptionalError() => clearField($_whichOneof(1));
 
   @$pb.TagNumber(1)
@@ -275,7 +275,7 @@ class Sensors extends $pb.GeneratedMessage {
 
   Sensors._() : super();
   factory Sensors({
-    $core.Iterable<Sensors_Sensor> sensors,
+    $core.Iterable<Sensors_Sensor>? sensors,
   }) {
     final _result = create();
     if (sensors != null) {
@@ -294,7 +294,7 @@ class Sensors extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Sensors copyWith(void Function(Sensors) updates) => super.copyWith((message) => updates(message as Sensors)); // ignore: deprecated_member_use
+  Sensors copyWith(void Function(Sensors) updates) => super.copyWith((message) => updates(message as Sensors)) as Sensors; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Sensors create() => Sensors._();
@@ -302,7 +302,7 @@ class Sensors extends $pb.GeneratedMessage {
   static $pb.PbList<Sensors> createRepeated() => $pb.PbList<Sensors>();
   @$core.pragma('dart2js:noInline')
   static Sensors getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Sensors>(create);
-  static Sensors _defaultInstance;
+  static Sensors? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<Sensors_Sensor> get sensors => $_getList(0);
@@ -340,11 +340,11 @@ class SensorConfig extends $pb.GeneratedMessage {
 
   SensorConfig._() : super();
   factory SensorConfig({
-    $core.int id,
-    $core.String alias,
-    $core.String unit,
-    $core.int rate,
-    $core.String source,
+    $core.int? id,
+    $core.String? alias,
+    $core.String? unit,
+    $core.int? rate,
+    $core.String? source,
   }) {
     final _result = create();
     if (id != null) {
@@ -375,7 +375,7 @@ class SensorConfig extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SensorConfig copyWith(void Function(SensorConfig) updates) => super.copyWith((message) => updates(message as SensorConfig)); // ignore: deprecated_member_use
+  SensorConfig copyWith(void Function(SensorConfig) updates) => super.copyWith((message) => updates(message as SensorConfig)) as SensorConfig; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SensorConfig create() => SensorConfig._();
@@ -383,12 +383,12 @@ class SensorConfig extends $pb.GeneratedMessage {
   static $pb.PbList<SensorConfig> createRepeated() => $pb.PbList<SensorConfig>();
   @$core.pragma('dart2js:noInline')
   static SensorConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SensorConfig>(create);
-  static SensorConfig _defaultInstance;
+  static SensorConfig? _defaultInstance;
 
-  SensorConfig_OptionalRate whichOptionalRate() => _SensorConfig_OptionalRateByTag[$_whichOneof(0)];
+  SensorConfig_OptionalRate whichOptionalRate() => _SensorConfig_OptionalRateByTag[$_whichOneof(0)]!;
   void clearOptionalRate() => clearField($_whichOneof(0));
 
-  SensorConfig_OptionalSource whichOptionalSource() => _SensorConfig_OptionalSourceByTag[$_whichOneof(1)];
+  SensorConfig_OptionalSource whichOptionalSource() => _SensorConfig_OptionalSourceByTag[$_whichOneof(1)]!;
   void clearOptionalSource() => clearField($_whichOneof(1));
 
   @$pb.TagNumber(1)
@@ -446,8 +446,8 @@ class Value extends $pb.GeneratedMessage {
 
   Value._() : super();
   factory Value({
-    $core.int id,
-    $core.double value,
+    $core.int? id,
+    $core.double? value,
   }) {
     final _result = create();
     if (id != null) {
@@ -469,7 +469,7 @@ class Value extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Value copyWith(void Function(Value) updates) => super.copyWith((message) => updates(message as Value)); // ignore: deprecated_member_use
+  Value copyWith(void Function(Value) updates) => super.copyWith((message) => updates(message as Value)) as Value; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Value create() => Value._();
@@ -477,7 +477,7 @@ class Value extends $pb.GeneratedMessage {
   static $pb.PbList<Value> createRepeated() => $pb.PbList<Value>();
   @$core.pragma('dart2js:noInline')
   static Value getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Value>(create);
-  static Value _defaultInstance;
+  static Value? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get id => $_getIZ(0);
@@ -507,8 +507,8 @@ class SetPwm extends $pb.GeneratedMessage {
 
   SetPwm._() : super();
   factory SetPwm({
-    SetPwm_Channel channel,
-    $core.double value,
+    SetPwm_Channel? channel,
+    $core.double? value,
   }) {
     final _result = create();
     if (channel != null) {
@@ -530,7 +530,7 @@ class SetPwm extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SetPwm copyWith(void Function(SetPwm) updates) => super.copyWith((message) => updates(message as SetPwm)); // ignore: deprecated_member_use
+  SetPwm copyWith(void Function(SetPwm) updates) => super.copyWith((message) => updates(message as SetPwm)) as SetPwm; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SetPwm create() => SetPwm._();
@@ -538,7 +538,7 @@ class SetPwm extends $pb.GeneratedMessage {
   static $pb.PbList<SetPwm> createRepeated() => $pb.PbList<SetPwm>();
   @$core.pragma('dart2js:noInline')
   static SetPwm getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPwm>(create);
-  static SetPwm _defaultInstance;
+  static SetPwm? _defaultInstance;
 
   @$pb.TagNumber(1)
   SetPwm_Channel get channel => $_getN(0);

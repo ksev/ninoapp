@@ -18,20 +18,20 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  google_fonts: ^1.1.1
-  provider: ^4.3.3
-  flutter_svg: ^0.19.1
-  chunked_stream: ^1.2.0 
-  flutter_sparkline: ^0.1.0
-  protobuf: ^1.1.0
+  google_fonts: ^2.0.0
+  provider: ^5.0.0
+  flutter_svg: 0.21.0-nullsafety.0
+  chunked_stream: ^1.4.0 
+  protobuf: ^2.0.0
+  sqflite: 2.0.0+2
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  flutter_launcher_icons: "^0.8.0"
+  flutter_launcher_icons: "^0.9.0"
 
 flutter_icons:
   android: "launcher_icon"
